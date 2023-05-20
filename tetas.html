@@ -65,16 +65,13 @@
     }
 
     .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      position: absolute;
+      animation: moveImage 10s infinite;
     }
 
     .image-frame {
       border: 11px solid white;
       padding: 10px;
-      animation: fadeInOut 3s infinite;
     }
 
     .image-frame img {
@@ -92,15 +89,26 @@
       max-width: 100%;
     }
 
-    @keyframes fadeInOut {
+    @keyframes moveImage {
       0% {
-        opacity: 0;
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: calc(100% - 30%);
       }
       50% {
-        opacity: 1;
+        top: calc(100% - 30%);
+        left: calc(100% - 30%);
+      }
+      75% {
+        top: calc(100% - 30%);
+        left: 0;
       }
       100% {
-        opacity: 0;
+        top: 0;
+        left: 0;
       }
     }
   </style>
@@ -126,14 +134,9 @@
         \_| \_\____/\_| \_/
       </pre>
     </div>
-    <div class="image-container">
+    <div class="image-container" style="top: 20%; left: 20%;">
       <div class="image-frame">
         <img src="tetas.jpg" alt="Descripción de la imagen">
-      </div>
-    </div>
-    <div class="image-container">
-      <div class="image-frame">
-        <img src="nueva-imagen.jpg" alt="Descripción de la imagen nueva">
       </div>
     </div>
     <div class="audio-player">
@@ -155,22 +158,6 @@
       pre.style.color = colors[currentColor];
       currentColor = (currentColor + 1) % colors.length;
     }, 500);
-
-    const images = document.querySelectorAll(".image-frame");
-    let currentIndex = 0;
-
-    setInterval(() => {
-      images.forEach((image, index) => {
-        if (index === currentIndex) {
-          image.classList.add("fadeInOut");
-        } else {
-          image.classList.remove("fadeInOut");
-        }
-      });
-
-      currentIndex = (currentIndex + 1) % images.length;
-    }, 3000);
   </script>
 </body>
 </html>
-
