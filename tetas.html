@@ -65,17 +65,25 @@
     }
 
     .image-container {
-      position: absolute;
-      animation: moveImage 10s infinite;
+      position: relative;
+      height: 50vh;
     }
 
     .image-frame {
       border: 11px solid white;
       padding: 10px;
+      position: absolute;
+      top: 20%;
+      left: 20%;
     }
 
     .image-frame img {
       max-width: 30%;
+    }
+
+    .image-frame.static {
+      top: 40%;
+      left: 40%;
     }
 
     .audio-player {
@@ -134,9 +142,12 @@
         \_| \_\____/\_| \_/
       </pre>
     </div>
-    <div class="image-container" style="top: 20%; left: 20%;">
+    <div class="image-container">
       <div class="image-frame">
-        <img src="tetas.jpg" alt="Descripción de la imagen">
+        <img src="laura.PNG" alt="Descripción de la imagen">
+      </div>
+      <div class="image-frame static">
+        <img src="tetas.jpg" alt="Descripción de la imagen 2">
       </div>
     </div>
     <div class="audio-player">
