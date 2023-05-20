@@ -131,6 +131,11 @@
         <img src="tetas.jpg" alt="Descripción de la imagen">
       </div>
     </div>
+    <div class="image-container">
+      <div class="image-frame">
+        <img src="nueva-imagen.jpg" alt="Descripción de la imagen nueva">
+      </div>
+    </div>
     <div class="audio-player">
       <audio controls>
         <source src="temita.mp3" type="audio/mpeg">
@@ -150,6 +155,21 @@
       pre.style.color = colors[currentColor];
       currentColor = (currentColor + 1) % colors.length;
     }, 500);
+
+    const images = document.querySelectorAll(".image-frame");
+    let currentIndex = 0;
+
+    setInterval(() => {
+      images.forEach((image, index) => {
+        if (index === currentIndex) {
+          image.classList.add("fadeInOut");
+        } else {
+          image.classList.remove("fadeInOut");
+        }
+      });
+
+      currentIndex = (currentIndex + 1) % images.length;
+    }, 3000);
   </script>
 </body>
 </html>
