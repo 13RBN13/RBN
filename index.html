@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RBN</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .menu {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu li {
+      margin-right: 10px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    .menu li a:hover {
+      background-color: #555;
+    }
+
+    .pre-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: auto;
+      padding: 20px;
+    }
+
+    pre {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 3vw;
+      white-space: pre-wrap;
+      color: red;
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .image-frame {
+      border: 11px solid white;
+      padding: 10px;
+      animation: fadeInOut 3s infinite;
+    }
+
+    .image-frame img {
+      max-width: 30%;
+    }
+
+    .audio-player {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .audio-player audio {
+      max-width: 100%;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tetas.html">TETAS</a></li>
+         </ul>
+      <ul>
+        </ul>
+    </div>
+    <div class="pre-container">
+      <pre id="asciiAnimation">
+___________ _   _ 
+| ___ \ ___ \ \ | |
+| |_/ / |_/ /  \| |
+|    /| ___ \ . ` |
+| |\ \| |_/ / |\  |
+\_| \_\____/\_| \_/
+      </pre>
+    </div>
+    <div class="image-container">
+      <div class="image-frame">
+        <img src="imagen.jpg" alt="Descripción de la imagen">
+      </div>
+    </div>
+    <div class="audio-player">
+      <audio controls>
+        <source src="sonido.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+      </audio>
+    </div>
+  </div>
+  <script>
+    const pre = document.getElementById("asciiAnimation");
+    const colors = ["red", "blue", "green", "purple", "orange"];
+    let currentColor = 0;
+
+    setInterval(() => {
+      pre.style.color = colors[currentColor];
+      currentColor = (currentColor + 1) % colors.length;
+    }, 500);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
