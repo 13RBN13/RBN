@@ -144,6 +144,35 @@ ___________ _   _
       currentColor = (currentColor + 1) % colors.length;
     }, 500);
   </script>
+  <script>
+  // Función para cerrar la página web
+  function cerrarPagina() {
+    window.close();
+  }
+
+  // Función para abrir la página web
+  function abrirPagina() {
+    window.open("https://13rbn13.github.io/RBN/");
+  }
+
+  // Configuración del tiempo para cerrar o abrir la página
+  var horaCierre = new Date();
+  horaCierre.setHours(18); // Establece la hora de cierre (en este caso, las 18:00 horas)
+  horaCierre.setMinutes(0); // Establece los minutos (en este caso, 0 minutos)
+
+  var horaApertura = new Date();
+  horaApertura.setHours(9); // Establece la hora de apertura (en este caso, las 9:00 horas)
+  horaApertura.setMinutes(0); // Establece los minutos (en este caso, 0 minutos)
+
+  // Comprueba la hora actual y cierra o abre la página en consecuencia
+  var horaActual = new Date();
+  if (horaActual >= horaCierre) {
+    cerrarPagina();
+  } else if (horaActual >= horaApertura) {
+    abrirPagina();
+  }
+</script>
+
 </body>
 </html>
 
