@@ -189,6 +189,26 @@ ___________ _   _
     }
   </script>
 </body>
+  <span id="contador">10</span>
+<script>
+  var contador = 10;
+  var contadorElemento = document.getElementById('contador');
+
+  function actualizarContador() {
+    contadorElemento.textContent = contador;
+    if (contador > 0) {
+      contador--;
+      setTimeout(actualizarContador, 1000);
+    } else {
+      // Aquí puedes realizar alguna acción cuando el contador llegue a cero
+    }
+  }
+
+  window.addEventListener('load', function() {
+    actualizarContador();
+  });
+</script>
+
 </html>
 
 
