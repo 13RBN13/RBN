@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contador y Redireccionamiento</title>
+  <script>
+    function startCountdown(seconds, targetUrl) {
+      var countdownElement = document.getElementById('countdown');
+
+      var countdown = seconds;
+      countdownElement.innerText = countdown;
+
+      var countdownInterval = setInterval(function() {
+        countdown--;
+        countdownElement.innerText = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = targetUrl;
+        }
+      }, 1000);
+    }
+
+    function updateClock() {
+      var clockElement = document.getElementById('clock');
+
+      var now = new Date();
+      var hour = now.getHours();
+      var minute = now.getMinutes();
+      var second = now.getSeconds();
+
+      // Formatear la hora con dos dígitos
+      hour = ('0' + hour).slice(-2);
+      minute = ('0' + minute).slice(-2);
+      second = ('0' + second).slice(-2);
+
+      var timeString = hour + ':' + minute + ':' + second;
+
+      clockElement.innerText = timeString;
+    }
+  </script>
+</head>
+<body>
+  <h1>Contador y Redireccionamiento</h1>
+  <p>Hora española:</p>
+  <p id="clock"></p>
+  <p>Redireccionando en: <span id="countdown">10</span> segundos...</p>
+
+  <script>
+    // Inicializar el contador y redireccionar después de 10 segundos
+    startCountdown(10, 'other.html');
+    // Mostrar la hora española actualizada cada segundo
+    setInterval(updateClock, 1000);
+    updateClock(); // Mostrar la hora inmediatamente
+  </script>
+</body>
+</html>
