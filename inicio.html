@@ -4,98 +4,43 @@
   <title>Contador y Redireccionamiento</title>
   <style>
     body {
-      background-color: black;
+      background-color: #f2f2f2; /* Cambiar el color de fondo */
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
     }
 
     .container {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    .menu {
-      background-color: #333;
-      padding: 10px;
-    }
-
-    .menu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    .menu li {
-      margin-right: 10px;
-    }
-
-    .menu li a {
-      color: white;
-      text-decoration: none;
-      padding: 5px 10px;
-    }
-
-    .menu li a:hover {
-      background-color: #555;
-    }
-
-    .pre-container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: auto;
+      background-color: #ffffff; /* Cambiar el color del contenedor */
+      border: 1px solid #cccccc; /* Agregar borde al contenedor */
       padding: 20px;
-    }
-
-    pre {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 3vw;
-      white-space: pre-wrap;
-      color: red;
       text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
-    .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
-    .image-frame {
-      border: 11px solid white;
-      padding: 10px;
-      animation: fadeInOut 3s infinite;
+    p {
+      font-size: 16px;
+      margin-bottom: 5px;
     }
 
-    .image-frame img {
-      max-width: 30%;
+    #clock {
+      font-size: 32px;
+      font-weight: bold;
     }
 
-    .audio-player {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-    }
-
-    .audio-player audio {
-      max-width: 100%;
-    }
-
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+    #countdown {
+      font-size: 48px;
+      font-weight: bold;
     }
   </style>
   <script>
@@ -147,9 +92,12 @@
   </script>
 </head>
 <body onload="initialize()">
-  <h1>Contador y Redireccionamiento</h1>
-  <p>Hora española:</p>
-  <p id="clock"></p>
-  <p>Redireccionando en: <span id="countdown">10</span> segundos...</p>
+  <div class="container">
+    <h1>Contador y Redireccionamiento</h1>
+    <p>Hora española:</p>
+    <div id="clock"></div>
+    <p>Redireccionando en: <span id="countdown">10</span> segundos...</p>
+  </div>
 </body>
 </html>
+
