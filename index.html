@@ -144,6 +144,24 @@ ___________ _   _
       currentColor = (currentColor + 1) % colors.length;
     }, 500);
   </script>
+ <script>
+    var contador = 10;
+
+    function cerrarPagina() {
+      console.log(contador);
+      if (contador > 0) {
+        contador--;
+        setTimeout(cerrarPagina, 1000);
+      } else {
+        window.close();
+      }
+    }
+
+    window.addEventListener('beforeunload', function() {
+      cerrarPagina();
+    });
+  
+ </script>
   <script>
   // Función para cerrar la página web
   function cerrarPagina() {
