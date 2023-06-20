@@ -144,24 +144,28 @@ ___________ _   _
       currentColor = (currentColor + 1) % colors.length;
     }, 500);
   </script>
- <script>
+  <script>
     var contador = 10;
+    var contadorElemento = document.getElementById('contador');
 
-    function cerrarPagina() {
-      console.log(contador);
+    function actualizarContador() {
+      contadorElemento.textContent = contador;
       if (contador > 0) {
         contador--;
-        setTimeout(cerrarPagina, 1000);
+        setTimeout(actualizarContador, 1000);
       } else {
-        window.close();
+        // Aquí puedes realizar alguna acción cuando el contador llegue a cero
       }
     }
 
-    window.addEventListener('beforeunload', function() {
-      cerrarPagina();
+    window.addEventListener('load', function() {
+      actualizarContador();
     });
-  
- </script>
+  </script>
+</head>
+<body>
+  <h1>Contador:</h1>
+  <p id="contador">10</p>
   <script>
   // Función para cerrar la página web
   function cerrarPagina() {
